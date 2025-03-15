@@ -94,7 +94,6 @@ export default {
   mounted() {
     const savedCart = localStorage.getItem("cart");
     if (savedCart) {
-      console.log("savedCart :", savedCart);
       this.cart = JSON.parse(savedCart);
     }
 
