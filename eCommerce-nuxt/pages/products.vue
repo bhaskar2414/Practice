@@ -2,7 +2,7 @@
   <div class="min-h-screen bg-gray-100">
     <Header :cart-count="cart.length" />
 
-    <main class="max-w-7xl mx-auto px-4 py-8">
+    <main class="max-w-7xl mx-auto px-4 pt-24">
       <h1 class="text-3xl font-bold mb-8">Our Products</h1>
 
       <div v-if="loading" class="text-center py-12">
