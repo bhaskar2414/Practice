@@ -6,12 +6,11 @@ This is a simple React project created for learning and practicing React concept
 
 ```
 my-dashboard/
-├── public/
-│   └── index.html
 ├── src/
 │   ├── pages/
+│   ├── routes/
 │   ├── App.jsx
-│   ├── index.jsx
+│   ├── main.jsx
 │   └── ... (other files)
 ├── .gitignore
 ├── package.json
