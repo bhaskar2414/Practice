@@ -1,4 +1,4 @@
-# Practice React Project
+# Practice Projects
 
 This repository contains various practice projects and experiments built using React and nuxt. It is intended for learning, experimenting, and improving frontend skills.
 
