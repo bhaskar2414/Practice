@@ -12,4 +12,7 @@ export default defineConfig({
       "@routes": path.resolve(__dirname, "./src/routes"),
     },
   },
+  server: {
+    port: 3000, // 👈 set port here
+  },
 });
