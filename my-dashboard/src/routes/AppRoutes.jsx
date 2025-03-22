@@ -2,6 +2,8 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import Login from "@pages/Login";
 import Signup from "@pages/Signup";
 import Dashboard from "@pages/Dashboard";
+import DashboardLayout from "@/components/layouts/DashboardLayout";
+import UsersList from "@/pages/users/UsersList";
 
 const ProtedtedRoutes = ({ children }) => {
   const isAuthenticated = localStorage.getItem("isAuthenticated") === "true";
@@ -21,10 +23,13 @@ export default function AppRoutes() {
         path="/"
         element={
           <ProtedtedRoutes>
-            <Dashboard />
+            <DashboardLayout />
           </ProtedtedRoutes>
         }
-      />
+      >
+        <Route index element={<Dashboard />} />
+        <Route path="users" element={<UsersList />} />
+      </Route>
     </Routes>
   );
 }
