@@ -88,10 +88,11 @@ const DashboardLayout = () => {
               <DropdownMenuTrigger asChild>
                 <Button
                   variant="ghost"
-                  className="relative h-8 w-8 rounded-full  bg-primary"
+                  className="relative h-8 w-8 rounded-full ring-1 cursor-pointer"
                 >
-                  <Avatar className="h-8 w-8  bg-primary">
+                  <Avatar className="h-8 w-8">
                     <AvatarImage src="/placeholder.svg" alt="User" />
+                    <AvatarFallback>JD</AvatarFallback>
                   </Avatar>
                 </Button>
               </DropdownMenuTrigger>
