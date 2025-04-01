@@ -9,8 +9,10 @@ import {
   LogOut,
   User,
   Home,
+  ShoppingBag,
+  // Category,
 } from "lucide-react";
-import { Link, Outlet, useNavigate } from "react-router-dom";
+import { Link, Outlet, useNavigate, useLocation } from "react-router-dom";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { cn } from "@/lib/utils";
 import { Toaster } from "@/components/ui/sonner";
@@ -28,39 +30,40 @@ import { Button } from "@/components/ui/button";
 const DashboardLayout = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const navigate = useNavigate();
-
-  const menuItems = [
-    {
-      title: "Dashboard",
-      path: "/",
-      icon: <Home className="h-5 w-5" />,
-    },
-    {
-      title: "Users",
-      path: "/users",
-      icon: <Users className="h-5 w-5" />,
-    },
-    {
-      title: "Products",
-      path: "/products",
-      icon: <Package className="h-5 w-5" />,
-    },
-    {
-      title: "Categories",
-      path: "/categories",
-      icon: <FolderTree className="h-5 w-5" />,
-    },
-    {
-      title: "Profile Settings",
-      path: "/profile",
-      icon: <Settings className="h-5 w-5" />,
-    },
-  ];
+  const location = useLocation();
 
   const handleLogout = () => {
     localStorage.removeItem("isAuthenticated");
     navigate("/login");
   };
+
+  const sidebarItems = [
+    {
+      icon: <Home className="h-4 w-4" />,
+      label: "Dashboard",
+      href: "/dashboard",
+    },
+    {
+      icon: <Users className="h-4 w-4" />,
+      label: "Users",
+      href: "/dashboard/users",
+    },
+    // {
+    //   icon: <Category className="h-4 w-4" />,
+    //   label: "Categories",
+    //   href: "/dashboard/categories",
+    // },
+    {
+      icon: <ShoppingBag className="h-4 w-4" />,
+      label: "Products",
+      href: "/dashboard/products",
+    },
+    {
+      icon: <Settings className="h-4 w-4" />,
+      label: "Profile",
+      href: "/dashboard/profile",
+    },
+  ];
 
   return (
     <div className="min-h-screen bg-gray-100 dark:bg-gray-900">
@@ -139,19 +142,19 @@ const DashboardLayout = () => {
           )}
         >
           <nav className="mt-6 px-4 space-y-1">
-            {menuItems.map((item) => (
+            {sidebarItems.map((item) => (
               <Link
-                key={item.path}
-                to={item.path}
+                key={item.href}
+                to={item.href}
                 className={cn(
                   "flex items-center px-4 py-3 text-sm font-medium rounded-md transition-colors",
-                  location.pathname === item.path
+                  location.pathname === item.href
                     ? "bg-primary text-white"
                     : "text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
                 )}
               >
                 {item.icon}
-                <span className="ml-3">{item.title}</span>
+                <span className="ml-3">{item.label}</span>
               </Link>
             ))}
           </nav>

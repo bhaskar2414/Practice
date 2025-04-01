@@ -68,9 +68,11 @@ const UsersList = () => {
                 </TableCell>
               </TableRow>
             ) : users.length === 0 ? (
-              <TableCell colSpan={6} className="text-center">
-                Loading...
-              </TableCell>
+              <TableRow>
+                <TableCell colSpan={6} className="text-center">
+                  Loading...
+                </TableCell>
+              </TableRow>
             ) : (
               users.map((user) => (
                 <TableRow key={user.id}>
