@@ -21,6 +21,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { ArrowLeft } from "lucide-react";
+import { toast } from "sonner";
 
 const CreateUser = () => {
   const navigate = useNavigate();
@@ -52,11 +53,13 @@ const CreateUser = () => {
       await new Promise((resolve) => setTimeout(resolve, 1000));
 
       // Show success message and redirect
-      alert("User created successfully!");
+      toast.success("User created successfully!");
+      /// alert("User created successfully!");
       navigate("/users");
     } catch (error) {
       console.error("Error creating user:", error);
-      alert("Failed to create user. Please try again.");
+      toast.error("Failed to create user. Please try again.");
+      //alert("Failed to create user. Please try again.");
     } finally {
       setIsSubmitting(false);
     }
@@ -93,7 +96,7 @@ const CreateUser = () => {
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  required
+                  //required
                 />
               </div>
               <div className="space-y-2">
@@ -101,10 +104,10 @@ const CreateUser = () => {
                 <Input
                   id="email"
                   name="email"
-                  type="email"
+                  //type="email"
                   value={formData.email}
                   onChange={handleChange}
-                  required
+                  //required
                 />
               </div>
             </div>
@@ -118,7 +121,7 @@ const CreateUser = () => {
                   type="password"
                   value={formData.password}
                   onChange={handleChange}
-                  required
+                  // required
                 />
               </div>
               <div className="space-y-2">

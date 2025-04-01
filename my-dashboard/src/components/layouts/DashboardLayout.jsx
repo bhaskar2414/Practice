@@ -13,6 +13,7 @@ import {
 import { Link, Outlet, useNavigate } from "react-router-dom";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { cn } from "@/lib/utils";
+import { Toaster } from "@/components/ui/sonner";
 
 import {
   DropdownMenu,
@@ -161,6 +162,7 @@ const DashboardLayout = () => {
           <Outlet />
         </main>
       </div>
+      <Toaster />
     </div>
   );
 };

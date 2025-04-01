@@ -5,6 +5,8 @@ import Dashboard from "@pages/Dashboard";
 import DashboardLayout from "@/components/layouts/DashboardLayout";
 import UsersList from "@/pages/users/UsersList";
 import CreateUser from "@/pages/users/CreateUser";
+import ProductsList from "@/pages/products/ProductList";
+import ProductDetails from "@/pages/products/[id]/page";
 
 const ProtedtedRoutes = ({ children }) => {
   const isAuthenticated = localStorage.getItem("isAuthenticated") === "true";
@@ -31,6 +33,9 @@ export default function AppRoutes() {
         <Route index element={<Dashboard />} />
         <Route path="users" element={<UsersList />} />
         <Route path="users/create" element={<CreateUser />} />
+
+        <Route path="products" element={<ProductsList />} />
+        <Route path="products/:id" element={<ProductDetails />} />
       </Route>
     </Routes>
   );
