@@ -1,0 +1,17 @@
+{
+  "name": "gujarati-pulse-scraper",
+  "version": "1.0.0",
+  "description": "News scraping service for GujaratiPulse app",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "dependencies": {
+    "axios": "^1.6.7",
+    "cheerio": "^1.0.0-rc.12"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}
